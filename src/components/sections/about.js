@@ -56,21 +56,27 @@ const StyledPic = styled.div`
   }
 
   .wrapper {
-    ${({ theme }) => theme.mixins.boxShadow};
     display: block;
     position: relative;
     width: 100%;
     border-radius: var(--border-radius);
-    background-color: var(--green);
+    overflow: hidden;
+
+    /* Removed: background-color: var(--green); */
+
+    .img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: var(--border-radius);
+      filter: none;
+      mix-blend-mode: normal;
+      transition: none;
+    }
 
     &:hover,
     &:focus {
-      outline: 0;
-      transform: translate(-4px, -4px);
-
-      &:after {
-        transform: translate(8px, 8px);
-      }
+      transform: none;
 
       .img {
         filter: none;
@@ -78,40 +84,13 @@ const StyledPic = styled.div`
       }
     }
 
-    .img {
-      position: relative;
-      border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1);
-      transition: var(--transition);
-    }
-
     &:before,
     &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: var(--border-radius);
-      transition: var(--transition);
-    }
-
-    &:before {
-      top: 0;
-      left: 0;
-      background-color: var(--navy);
-      mix-blend-mode: screen;
-    }
-
-    &:after {
-      border: 2px solid var(--green);
-      top: 14px;
-      left: 14px;
-      z-index: -1;
+      content: none;
     }
   }
 `;
+
 
 const About = () => {
   const revealContainer = useRef(null);
@@ -125,7 +104,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = ['React', 'Angular', 'Node.js', 'TypeScript', 'MongoDB', 'Python'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,10 +114,10 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-Hi, I’m Zainub Waqas — a software engineer driven by creativity and a love for problem-solving. I enjoy crafting responsive user experiences and building smart tools that simplify everyday tasks. I'm always ready for a challenge that helps me grow and make an impact.            </p>
+Hi, I’m Zainub Waqas - a software engineer driven by creativity and a love for problem solving. I enjoy crafting responsive user experiences and building smart tools that simplify everyday tasks.  </p>
 
             <p>
-I'm currently pursuing a Bachelor's in Computer Science at UMass Amherst, where I’ve earned Dean’s List recognition and the Chancellor’s Award. My academic journey is complemented by hands-on industry experience — from interning with Marriott International’s Digital Technology team to building impactful full-stack solutions at Systems Limited.
+I'm currently pursuing a Bachelor's in Computer Science at UMass Amherst, where I’ve earned Dean’s List recognition and the Chancellor’s Award. My academic journey is complemented by hands-on industry experience - from interning with Marriott International’s Digital Technology team to building impactful full-stack solutions at Systems Limited.
             {/* {/* <p> */}
              {/* Over the past year, I’ve engineered:
 

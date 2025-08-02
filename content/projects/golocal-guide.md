@@ -1,5 +1,5 @@
 ---
-date: '2017-12-27'
+date: '2019-1-27'
 title: 'Go local-guide'
 github: 'https://github.com/bchiang7/halcyon-site'
 external: 'https://halcyon-theme.netlify.com/'

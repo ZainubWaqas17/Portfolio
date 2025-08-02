@@ -1,6 +1,6 @@
 ---
 date: '1'
-title: 'Golocal guide'
+title: 'Golocal Guide'
 cover: './halcyon.png'
 github: 'https://github.com/ZainubWaqas17/GoLocal-Guide?tab=readme-ov-file'
 external: 'https://golocal-guide.vercel.app/'

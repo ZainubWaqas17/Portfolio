@@ -5,120 +5,147 @@ import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledHeroSection = styled.section`
-  ${({ theme }) => theme.mixins.flexCenter};
-  flex-direction: column;
-  align-items: flex-start;
-  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px;
   height: 100vh;
-  padding: 0;
-  background-color: rgb(105, 75, 105); /* ← Set background */
+  background-color: rgb(105, 75, 105);
 
-  @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) {
-    height: auto;
-    padding-top: var(--nav-height);
-  }
+  .hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
 
-  h1 {
-    margin: 0 0 30px 4px;
-    color: #ffffff; /* Light accent heading */
-    font-family: var(--font-mono);
-    font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
-    font-weight: 400;
-
-    @media (max-width: 480px) {
-      margin: 0 0 20px 2px;
+    @media (max-width: 768px) {
+      gap: 40px;
     }
   }
 
-  h2 {
-    color: #f6f0f3; /* Name color */
+  .hero-content {
+    flex: 1;
+    max-width: 600px;
+
+    h1 {
+      color: #ccc;
+      font-family: var(--font-mono);
+      font-size: clamp(12px, 2vw, 16px);
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #fff;
+      font-size: clamp(80px, 5vw, 54px);
+      font-weight: 800;
+      margin-bottom: 10px;
+      font-family: Hybi11 Amigo Bold;
+    }
+
+    h3 {
+      color: #f0e4ec;
+      font-size: clamp(60px, 4vw, 36px);
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #d0c3cd;
+      font-size: clamp(14px, 2vw, 18px);
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .email-link {
+      display: inline-block;
+      background-color: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: clamp(12px, 2vw, 16px);
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
   }
 
-  h3 {
-    margin-top: 5px;
-    color: #e3d5df; /* Subheading */
-    line-height: 1.1;
-  }
-
-  p {
-    margin: 20px 0 0;
-    max-width: 540px;
-    color: #d1c3cf; /* Paragraph text */
-  }
-
-  .email-link {
-    ${({ theme }) => theme.mixins.bigButton};
-    margin-top: 50px;
-    color: #bf9db2;
-    border-color: #ffffff;
-
-    &:hover,
-    &:focus {
-      background-color: rgba(255, 255, 255, 0.1);
+  .hero-image {
+    flex-shrink: 0;
+    width: clamp(180px, 11vw, 370px);
+    height: auto;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
     }
   }
 `;
-
 
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (prefersReducedMotion) {
-      return;
-    }
-
+    if (prefersReducedMotion) return;
     const timeout = setTimeout(() => setIsMounted(true), navDelay);
     return () => clearTimeout(timeout);
   }, []);
 
-  const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Brittany Chiang.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
-  const four = (
-    <>
-      <p>
-        I’m a software engineer specializing in building (and occasionally designing) exceptional
-        digital experiences. Currently, I’m focused on building accessible, human-centered products
-        at{' '}
-        <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-          Upstatement
-        </a>
-        .
-      </p>
-    </>
+  const heroImage = (
+    <div className="hero-image">
+      <img src="/heroimg.png" alt="Zainub Waqas" />
+    </div>
   );
-  const five = (
+
+  const contentItems = [
+    <h1 key="h1">Hi, I am</h1>,
+    <h2 key="h2">zainub waqas.</h2>,
+    <h3 key="h3">i deliver value by coding solutions that matter.</h3>,
+    <p key="p">
+      I am a self-motivated, ambitious and competent software engineer, with a deep appreciation
+      for arts and creativity, always on the look for opportunities to grow in my knowledge,
+      experience and skills.
+    </p>,
     <a
+      key="btn"
       className="email-link"
-      href="https://www.newline.co/courses/build-a-spotify-connected-app"
+      href="https://www.linkedin.com/in/zwaqas/"
       target="_blank"
       rel="noreferrer">
       Connect with me on LinkedIn!
-    </a>
-  );
-
-  const items = [one, two, three, four, five];
+    </a>,
+  ];
 
   return (
     <StyledHeroSection>
-      {prefersReducedMotion ? (
-        <>
-          {items.map((item, i) => (
-            <div key={i}>{item}</div>
-          ))}
-        </>
-      ) : (
-        <TransitionGroup component={null}>
-          {isMounted &&
-            items.map((item, i) => (
-              <CSSTransition key={i} classNames="fadeup" timeout={loaderDelay}>
-                <div style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
-              </CSSTransition>
-            ))}
-        </TransitionGroup>
-      )}
+      <div className="hero-inner">
+        {!prefersReducedMotion ? (
+          <>
+            <CSSTransition in={isMounted} classNames="fadeup" timeout={loaderDelay} appear>
+              {heroImage}
+            </CSSTransition>
+            <div className="hero-content">
+              <TransitionGroup component={null}>
+                {isMounted &&
+                  contentItems.map((item, i) => (
+                    <CSSTransition key={i} classNames="fadeup" timeout={loaderDelay}>
+                      <div style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
+                    </CSSTransition>
+                  ))}
+              </TransitionGroup>
+            </div>
+          </>
+        ) : (
+          <>
+            {heroImage}
+            <div className="hero-content">{contentItems}</div>
+          </>
+        )}
+      </div>
     </StyledHeroSection>
   );
 };

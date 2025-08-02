@@ -7,7 +7,7 @@ tech:
   - HTML
   - CSS
   - Bootstrap
-  - JS
+  - JavaScript
 company: 'Apple'
 showInProjects: true
 ---

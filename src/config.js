@@ -16,10 +16,10 @@ module.exports = {
     },
     {
       name: 'Linkedin',
-      url: 'www.linkedin.com/in/zwaqas',
+      url: 'https://www.linkedin.com/in/zwaqas/',
     },
     {
-      name: 'Codepen',
+     // name: 'Codepen',
       // url: 'https://codepen.io/bchiang7',
     },
   ],
