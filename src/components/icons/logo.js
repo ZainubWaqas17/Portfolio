@@ -6,7 +6,7 @@ const IconLogo = () => (
     <g transform="translate(-8, -2)">
       <g transform="translate(11, 5)">
         <polygon
-          stroke="currentColor"
+          stroke="#c098be"
           strokeWidth="5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -15,12 +15,12 @@ const IconLogo = () => (
         />
         <text
           x="39"
-          y="58"
+          y="62"
           textAnchor="middle"
-          fontSize="34"
-          fontWeight="bold"
-          fill="currentColor"
-          fontFamily="Arial, sans-serif"
+          fontSize="58"
+          fontWeight=""
+          fill="#c098be"
+          fontFamily="calibre, sans-serif"
         >
           Z
         </text>
