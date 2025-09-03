@@ -1,5 +1,5 @@
 ---
-date: '2019-11-12'
+date: '2019-1-1'
 title: 'Smart Buy'
 github: 'https://github.com/ZainubWaqas17/Smart-Buy'
 tech:

@@ -7,7 +7,7 @@ import { usePrefersReducedMotion } from '@hooks';
 const StyledHeroSection = styled.section`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding: 0 50px;
   height: 100vh;
   background-color: rgb(105, 75, 105);
@@ -15,9 +15,11 @@ const StyledHeroSection = styled.section`
   .hero-inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 30px;
     max-width: 1200px;
     width: 100%;
+    padding-top: 120px;
 
     @media (max-width: 768px) {
       gap: 40px;
@@ -29,7 +31,7 @@ const StyledHeroSection = styled.section`
     max-width: 600px;
 
     h1 {
-      color: #ccc;
+      color: #c49dc4;
       font-family: var(--font-mono);
       font-size: clamp(12px, 2vw, 16px);
       margin-bottom: 10px;
@@ -44,7 +46,7 @@ const StyledHeroSection = styled.section`
     }
 
     h3 {
-      color: #f0e4ec;
+      color: #b9abb6ff;
       font-size: clamp(60px, 4vw, 36px);
       margin-bottom: 20px;
     }
@@ -76,11 +78,13 @@ const StyledHeroSection = styled.section`
   .hero-image {
     flex-shrink: 0;
     width: clamp(180px, 11vw, 370px);
-    height: auto;
+    height: clamp(400px, 18vw, 420px);
+    align-self: flex-start; /* aligns top with text */
+   margin-top: 10px;
     img {
       width: 100%;
-      height: auto;
-      object-fit: contain;
+      height: 100%;
+      object-fit: cover;
     }
   }
 `;
@@ -106,18 +110,16 @@ const Hero = () => {
     <h2 key="h2">zainub waqas.</h2>,
     <h3 key="h3">i deliver value by coding solutions that matter.</h3>,
     <p key="p">
-      I am a self-motivated, ambitious and competent software engineer, with a deep appreciation
-      for arts and creativity, always on the look for opportunities to grow in my knowledge,
-      experience and skills.
+      I’m a self-motivated, ambitious, and skilled software developer with a strong foundation in modern web technologies, always eager to take on new challenges and build impactful solutions
     </p>,
-    <a
-      key="btn"
-      className="email-link"
-      href="https://www.linkedin.com/in/zwaqas/"
-      target="_blank"
-      rel="noreferrer">
-      Connect with me on LinkedIn!
-    </a>,
+    // <a
+    //   key="btn"
+    //   className="email-link"
+    //   href="https://www.linkedin.com/in/zwaqas/"
+    //   target="_blank"
+    //   rel="noreferrer">
+    //   Connect with me on LinkedIn!
+    // </a>,
   ];
 
   return (

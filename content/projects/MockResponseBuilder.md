@@ -7,7 +7,7 @@ tech:
   - OpenAI
   - GraphQL
   - Node.js
-  - TypeScript
+  - TS
 company: 'Marriott International'
 showInProjects: true
 ---

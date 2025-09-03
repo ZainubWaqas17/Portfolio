@@ -1,5 +1,5 @@
 ---
-date: '2019-12-18'
+date: '2019-1-1'
 title: 'Thinkerly'
 github: 'https://github.com/ZainubWaqas17/Thinkerly'
 external: ''
