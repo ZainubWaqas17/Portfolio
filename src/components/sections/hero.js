@@ -3,6 +3,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
+import heroImg from './heroimg.png';
 
 const StyledHeroSection = styled.section`
   display: flex;
@@ -12,7 +13,7 @@ const StyledHeroSection = styled.section`
   height: 100vh;
   background-color: rgb(105, 75, 105);
 
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
     height: auto; /* let content decide height */
     padding: 40px 20px; /* reduce padding */
   }
@@ -139,8 +140,6 @@ const StyledHeroSection = styled.section`
   }
 `;
 
-
-
 // const StyledHeroSection = styled.section`
 //   display: flex;
 //   justify-content: center;
@@ -160,7 +159,7 @@ const StyledHeroSection = styled.section`
 
 //     @media (max-width: 768px) {
 //       gap: 40px;
-      
+
 //     }
 //   }
 
@@ -225,7 +224,6 @@ const StyledHeroSection = styled.section`
 //       object-fit: cover;
 //     }
 
-    
 //   }
 // `;
 
@@ -234,14 +232,14 @@ const Hero = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (prefersReducedMotion) return;
+    if (prefersReducedMotion) {return;}
     const timeout = setTimeout(() => setIsMounted(true), navDelay);
     return () => clearTimeout(timeout);
   }, []);
 
   const heroImage = (
     <div className="hero-image">
-      <img src="/heroimg.png" alt="Zainub Waqas" />
+      <img src={heroImg} alt="Zainub Waqas" />
     </div>
   );
 
@@ -250,7 +248,8 @@ const Hero = () => {
     <h2 key="h2">zainub waqas.</h2>,
     <h3 key="h3">i deliver value by coding solutions that matter.</h3>,
     <p key="p">
-      I’m a self-motivated, ambitious, and skilled software developer with a strong foundation in modern web technologies, always eager to take on new challenges and build impactful solutions
+      I’m a self-motivated, ambitious, and skilled software developer with a strong foundation in
+      modern web technologies, always eager to take on new challenges and build impactful solutions
     </p>,
     // <a
     //   key="btn"
@@ -293,4 +292,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
