@@ -19,6 +19,7 @@ const StyledProjectsSection = styled.section`
   .archive-link {
     font-family: var(--font-mono);
     font-size: var(--fz-sm);
+    color: var(--green);
     &:after {
       bottom: 0.1em;
     }
@@ -61,6 +62,7 @@ const StyledProject = styled.li`
     position: relative;
     z-index: 1;
   }
+
 
   .project-inner {
     ${({ theme }) => theme.mixins.boxShadow};
@@ -267,9 +269,9 @@ const Projects = () => {
     <StyledProjectsSection>
       <h2 ref={revealTitle}>Other Noteworthy Projects</h2>
 
-      <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
+      <span className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
         read more about them
-      </Link>
+      </span>
 
       <ul className="projects-grid">
         {prefersReducedMotion ? (

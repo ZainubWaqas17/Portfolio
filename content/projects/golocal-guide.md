@@ -1,8 +1,8 @@
 ---
 date: '2019-1-27'
-title: 'Go local-guide'
-github: 'https://github.com/bchiang7/halcyon-site'
-external: 'https://halcyon-theme.netlify.com/'
+title: 'GoLocal Guide'
+github: 'https://github.com/ZainubWaqas17/GoLocal-Guide?tab=readme-ov-file'
+external: 'https://golocal-guide.vercel.app/'
 tech:
   - Angular
   - MongoDb

@@ -117,7 +117,7 @@ const About = () => {
 Hi, I’m Zainub Waqas - a software engineer driven by creativity and a love for problem solving. I enjoy crafting responsive user experiences and building smart tools that simplify everyday tasks.  </p>
 
             <p>
-I'm currently pursuing a Bachelor's in Computer Science at UMass Amherst, where I’ve earned Dean’s List recognition and the Chancellor’s Award. My academic journey is complemented by hands-on industry experience - from interning with Marriott International’s Digital Technology team to building impactful full-stack solutions at Systems Limited.
+I'm currently pursuing a Bachelor's in Computer Science at UMass Amherst, where I’ve earned Dean’s List recognition and the Chancellor’s Award. My academic journey is complemented by hands on industry experience - from interning with Marriott International’s Digital Technology team to building impactful full-stack solutions at Systems Limited.
             {/* {/* <p> */}
              {/* Over the past year, I’ve engineered:
 

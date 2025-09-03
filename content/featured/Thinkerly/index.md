@@ -1,5 +1,5 @@
 ---
-date: '2'
+date: '3'
 title: 'Thinkerly – Productivity Timer App'
 cover: './demo.png'
 github: 'https://github.com/ZainubWaqas17/Thinkerly'

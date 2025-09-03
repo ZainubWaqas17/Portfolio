@@ -1,5 +1,5 @@
 ---
-date: '1'
+date: '2'
 title: 'Golocal Guide'
 cover: './halcyon.png'
 github: 'https://github.com/ZainubWaqas17/GoLocal-Guide?tab=readme-ov-file'
