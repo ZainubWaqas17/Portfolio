@@ -2,8 +2,8 @@
 date: '1'
 title: 'Metro Bus Route Planner'
 cover: './metro.png'
-github: 'https://metro-bus-route-planner-frontend.vercel.app/'
-external: 'https://golocal-guide.vercel.app/'
+github: 'https://github.com/ZainubWaqas17/Metro-Bus-Route-Planner-Frontend'
+external: 'https://metro-bus-route-planner-frontend.vercel.app/'
 tech:
   - React
   - GeminiAPI

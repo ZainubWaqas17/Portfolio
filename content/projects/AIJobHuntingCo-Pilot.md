@@ -1,8 +1,7 @@
 ---
 date: '2026-12-29'
 title: 'AI Job Hunting Co-Pilot'
-github: ''
-external: ''
+
 tech:
   - Next.js
   - TypeScript

@@ -1,7 +1,7 @@
 ---
 date: '2025-12-01'
 title: 'Metro Bus Route Planner'
-github: ''
+github: 'https://github.com/ZainubWaqas17/Metro-Bus-Route-Planner-Frontend'
 external: 'https://metro-bus-route-planner-frontend.vercel.app/'
 tech:
   - React
